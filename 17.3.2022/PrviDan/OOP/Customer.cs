@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public abstract class Customer : ICustomer
+    public class Customer : ICustomer
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

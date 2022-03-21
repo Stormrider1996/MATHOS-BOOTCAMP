@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public class CarBrand
+    public abstract class CarBrand
     {
         public string BrandName { get; set; }
 
