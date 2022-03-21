@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public abstract class CarBrand
+    public class CarBrand
     {
-        public string name { get; set; }
+        public string BrandName { get; set; }
 
-        public  string placeOfOrigin { get; set; }
+        public  string PlaceOfOrigin { get; set; }
         
-        public  string dateOfEstablishment { get; set; }
+        public  string DateOfEstablishment { get; set; }
 
     }
 }

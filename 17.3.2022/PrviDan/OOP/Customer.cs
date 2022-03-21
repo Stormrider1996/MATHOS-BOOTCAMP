@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    interface ICustomer
+    public abstract class Customer : ICustomer
     {
-        string firstName { get; set; }
-        string lastName { get; set; }
-        string OIB { get; set; }
-        Guid orderNum { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Guid OrderNum { get; set; }
+        public Address Address { get; set; }
+        public virtual string GetAddress()
+        {
+            return $"Address: {Address.Country} {Address.City} {Address.Street} {Address.StreetNum} {Address.PostalCode} ";
+        }
+
+        protected string OIB { get; set; }
     }
 }

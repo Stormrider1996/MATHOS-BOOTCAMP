@@ -8,7 +8,7 @@ namespace OOP
 {
     public class Car : CarBrand
     {
-        public string type { get; set; }
-        public decimal cost { get; set; }
+        public string Model { get; set; }
+        public decimal Cost { get; set; }
     }
 }
