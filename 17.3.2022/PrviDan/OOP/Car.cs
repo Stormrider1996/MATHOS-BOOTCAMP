@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public class Car : CarBrand
+    public class Car : Customer
     {
         public string Model { get; set; }
         public decimal Cost { get; set; }

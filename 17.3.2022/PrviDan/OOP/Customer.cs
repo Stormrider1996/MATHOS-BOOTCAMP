@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    public class Customer : ICustomer
+    public class Customer : CarBrand, ICustomer
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,5 +18,17 @@ namespace OOP
         }
 
         protected string OIB { get; set; }
+
+        private string IBAN;
+
+        public string Account
+        {
+            get { return $"{FirstName} ${LastName} ${OrderNum}"; }
+            set { IBAN = value; }
+        }
+
     }
 }
+
+
+
