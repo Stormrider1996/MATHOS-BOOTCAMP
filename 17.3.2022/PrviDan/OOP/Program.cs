@@ -14,24 +14,24 @@ namespace OOP
            string killTheLoop = "1";
             do 
             {
-                Car car = new Car();
+                Car NewCar = new Car();
                 
                 Console.WriteLine("Enter car brand");
-                car.BrandName = Console.ReadLine();
+                NewCar.BrandName = Console.ReadLine();
 
                 Console.WriteLine("Enter car Model");
-                car.Model = Console.ReadLine();
+                NewCar.Model = Console.ReadLine();
                 
-                Cars.Add(car);
+                Cars.Add(NewCar);
                 
                 Console.WriteLine("To finish, press 1. To continue, press any key.");
                 killTheLoop = Console.ReadLine();
 
             } while (killTheLoop != "1");
             
-            foreach (var car in Cars)
+            foreach (Car NewCar in Cars)
             {
-                Console.WriteLine($"Car: {car.BrandName} {car.Model}\n");
+                Console.WriteLine($"Car: {NewCar.BrandName} {NewCar.Model}\n");
             }
             Console.ReadLine();
         }
