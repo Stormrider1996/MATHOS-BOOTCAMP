@@ -9,46 +9,50 @@ namespace Example.WebApi.Controllers
 {
     public class UserValuesController : ApiController
     {
-        public static List<User> users = new List<User>()
+        static List<User> users = new List<User>();
+        
+        //CREATE 
+        [HttpPost]
+        [Route("api/AddUser")]
+        public HttpResponseMessage CreateUser(User user)
         {
-            new User (1, "Franjo", "Jumic"),
-            new User (2, "Pero", "Peric"),
-            new User (3, "Marko", "Maric"),
-        };
-
-
-        // GET api/values
-        [Route("api/users/getuserfirstname/{userId}")]
-        [HttpGet]
-        public string GetUserFirstName(int userId)
-        {
-            string output = users.Where(u => u.Id == userId).Select(u => u.FirstName).FirstOrDefault();
-            return output;
-        }
-        // GET api/users
-        [Route("api/users")]
-        [HttpGet]
-        public List<User> Get()
-        {
-            return users;
-        }
-      
-        // POST api/values
-        public void Post(User val)
-        {
-            users.Add(val);
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
+            users.Add(user);
+            return Request.CreateResponse(HttpStatusCode.OK, user);
         }
         
+        //READ
+        [HttpGet]
+        [Route("api/GetUsers")]
+        public HttpResponseMessage GetUsers()
+        {
+            if (users.Count > 0)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, users);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "No users registered!");
+            }
+        }
+        
+        //DELETE
+        [HttpDelete]
+        [Route("api/DeleteUser")]
+        public HttpResponseMessage DeleteUserById(User user)
+        {
+            User output = users.Find(x => x.Id == user.Id);
+
+            if (output != null)
+            {
+                users.Remove(output);
+                return Request.CreateResponse(HttpStatusCode.OK, output);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, $"Developer not found");
+            }
+        }
+
     }
 }
 

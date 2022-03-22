@@ -10,12 +10,7 @@ namespace Example.WebApi.Controllers
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public User(int id, string fname, string lname)
-        {
-            Id = id;
-            FirstName = fname;
-            LastName = lname;
-        }
+        public static List<User> users { get; set; }
 
     }
 }
