@@ -31,7 +31,7 @@ namespace Example.WebApi.Controllers
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound, "No users registered!");
+                return Request.CreateResponse(HttpStatusCode.NotFound, "No users have been registered!");
             }
         }
         
@@ -53,6 +53,23 @@ namespace Example.WebApi.Controllers
             }
         }
 
+        //UPDATE
+        [HttpPut]
+        [Route("api/UpdateUser")]
+        public HttpResponseMessage UpdateUserNameById(User user)
+        {
+            User output = users.Find(x => x.Id == user.Id);
+            if (output != null)
+            {
+                output.FirstName = user.FirstName;
+                output.LastName = user.LastName;
+                return Request.CreateResponse(HttpStatusCode.OK, output);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, $"Developer not found");
+            }
+        }
     }
 }
 
