@@ -1,0 +1,9 @@
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\bin\Debug\Example.Repository.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\bin\Debug\Example.Repository.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\bin\Debug\Example.UserModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\bin\Debug\Example.UserModel.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\obj\Debug\Example.Repository.csproj.AssemblyReference.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\obj\Debug\Example.Repository.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\obj\Debug\Example.Repository.csproj.CopyComplete
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\obj\Debug\Example.Repository.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Repository\obj\Debug\Example.Repository.pdb

@@ -155,8 +155,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\User.cs" />
     <Compile Include="Controllers\UserValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +245,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Example.Services\Example.Services.csproj">
+      <Project>{97BFF4AF-82C4-409F-AB49-39967ABCBCCB}</Project>
+      <Name>Example.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Example.UserModel\Example.UserModel.csproj">
+      <Project>{703B477B-F150-47B0-8ED3-E82C561F46A3}</Project>
+      <Name>Example.UserModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

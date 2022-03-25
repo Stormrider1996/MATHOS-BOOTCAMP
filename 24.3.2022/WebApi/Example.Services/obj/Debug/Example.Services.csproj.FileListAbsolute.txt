@@ -1,0 +1,11 @@
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\obj\Debug\Example.Services.csproj.AssemblyReference.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\obj\Debug\Example.Services.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.Services.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.Services.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.Repository.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.UserModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.Repository.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\Example.UserModel.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\obj\Debug\Example.Services.csproj.CopyComplete
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\obj\Debug\Example.Services.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\obj\Debug\Example.Services.pdb

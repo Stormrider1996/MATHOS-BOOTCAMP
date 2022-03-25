@@ -1,0 +1,6 @@
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\bin\Debug\Example.UserModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\bin\Debug\Example.UserModel.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\obj\Debug\Example.UserModel.csproj.AssemblyReference.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\obj\Debug\Example.UserModel.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\obj\Debug\Example.UserModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.UserModel\obj\Debug\Example.UserModel.pdb
