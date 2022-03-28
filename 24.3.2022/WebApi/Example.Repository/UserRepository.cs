@@ -71,8 +71,7 @@ namespace Example.Repository
             using (connection)
             {
                 SqlDataAdapter adapter = new SqlDataAdapter();
-                SqlCommand command = new SqlCommand($"INSERT INTO Users (Id,FirstName,LastName) values('{user.Id}'," +
-                    $"'{user.FirstName}','{user.LastName}');", connection);
+                SqlCommand command = new SqlCommand($"INSERT INTO Users (Id,FirstName,LastName) values('{user.Id}','{user.FirstName}','{user.LastName}');", connection);
                 
                 await connection.OpenAsync();
                 adapter.InsertCommand = command;
