@@ -30,10 +30,10 @@ namespace Example.Services
             UserRepository userRepository = new UserRepository();
             await userRepository.UpdateUserByIdAsync(user);
         }
-        public async Task DeleteUserByIdAsync(int id)
+        public async Task<Boolean> DeleteUserByIdAsync(int id)
         {
             UserRepository userRepository = new UserRepository();
-            await userRepository.DeleteUserByIdAsync(id);
+            return await userRepository.DeleteUserByIdAsync(id);
         }
     }
 }

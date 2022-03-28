@@ -99,7 +99,7 @@ namespace Example.Repository
             }
         }
 
-        public async Task DeleteUserByIdAsync(int id)
+        public async Task<Boolean> DeleteUserByIdAsync(int id)
         {
             SqlConnection connection = new SqlConnection(connectionString);
 
@@ -114,6 +114,7 @@ namespace Example.Repository
                 await adapter.DeleteCommand.ExecuteNonQueryAsync();
 
                 connection.Close();
+                return false;
             }
         }
     }

@@ -112,8 +112,7 @@ namespace Example.WebApi.Controllers
         {
             UserServices userServices = new UserServices();
             await userServices.DeleteUserByIdAsync(id);
-            User user = new User();
-            if (user == null && user.Id == id)
+            if (!await userServices.DeleteUserByIdAsync(id))
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
             }
