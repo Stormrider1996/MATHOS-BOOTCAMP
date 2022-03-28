@@ -76,8 +76,15 @@ namespace Example.WebApi.Controllers
         public async Task<HttpResponseMessage> CreateUserAsync(User user)
         {
             UserServices userServices = new UserServices();
-            await userServices.CreateUserAsync(user);
-
+            User userModel = new User
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+            };
+            await userServices.CreateUserAsync(userModel);
+            
+            
             if (user != null)
             {
                 return Request.CreateResponse(HttpStatusCode.OK, user);
@@ -95,7 +102,13 @@ namespace Example.WebApi.Controllers
         public async Task<HttpResponseMessage> UpdateUserByIdAsync(User user)
         {
             UserServices userServices = new UserServices();
-            await userServices.UpdateUserByIdAsync(user);
+            User userModel = new User
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+            };
+            await userServices.UpdateUserByIdAsync(userModel);
 
             if (user != null)
             {
