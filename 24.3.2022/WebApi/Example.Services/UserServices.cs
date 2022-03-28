@@ -10,12 +10,30 @@ namespace Example.Services
 {
     public class UserServices
     {
-        public List<User> CatchDatabase()
+        public async Task<List<User>> GetUsersAsync()
         {
             UserRepository userRepository = new UserRepository();
-            List<User> users = userRepository.CatchDatabase();
-            return users;
+            return await userRepository.GetUsersAsync();
         }
-
+        public async Task<List<User>> GetUsersByIdAsync(int id)
+        {
+            UserRepository userRepository = new UserRepository();
+            return await userRepository.GetUsersByIdAsync(id); ;
+        }
+        public async Task CreateUserAsync(User user)
+        {
+            UserRepository userRepository = new UserRepository();
+            await userRepository.CreateUserAsync(user);
+        }
+        public async Task UpdateUserByIdAsync(User user)
+        {
+            UserRepository userRepository = new UserRepository();
+            await userRepository.UpdateUserByIdAsync(user);
+        }
+        public async Task DeleteUserByIdAsync(int id)
+        {
+            UserRepository userRepository = new UserRepository();
+            await userRepository.DeleteUserByIdAsync(id);
+        }
     }
 }

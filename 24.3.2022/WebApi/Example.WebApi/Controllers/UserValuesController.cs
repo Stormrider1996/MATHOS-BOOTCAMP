@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
+using Example.RestModel;
 
 namespace Example.WebApi.Controllers
 {
@@ -15,19 +17,21 @@ namespace Example.WebApi.Controllers
 
         [HttpGet]
         [Route("api/GetUsers")]
-        public HttpResponseMessage GetUsers()
+        public async Task<HttpResponseMessage> GetUsersAsync()
         {
             UserServices userServices = new UserServices();
-            List<User> users = userServices.CatchDatabase();
-            
-            if (users.Count > 0)
+            List<User> users = await userServices.GetUsersAsync();
+
+            if (users != null)
             {
-                List<UserRest> finalUsers = new List<UserRest>();
-                
+
+                List<UserRestModel> finalUsers = new List<UserRestModel>();
+
                 foreach (User user in users)
                 {
-                    UserRest userRest = new UserRest();
+                    UserRestModel userRest = new UserRestModel();
                     userRest.FirstName = user.FirstName;
+                    userRest.LastName = user.LastName;
                     finalUsers.Add(userRest);
 
                 }
@@ -37,61 +41,86 @@ namespace Example.WebApi.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, "No users");
             }
-        
+
         }
-        
-        
-        /*
+
         [HttpGet]
-        [Route("api/GetUsers/{userId}")]
-        public HttpResponseMessage GetUserById(int userId)
+        [Route("api/GetUsers/{id}")]
+        public async Task<HttpResponseMessage> GetUsersByIdAsync(int id)
         {
-            string conString = "Data Source=ST-03;Initial Catalog=UsersDB;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
-            using (con)
+            UserServices userServices = new UserServices();
+            List<User> users = await userServices.GetUsersByIdAsync(id);
+
+            if (users != null)
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM Users;", con);
-                con.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                List<User> users = new List<User>();
-                User GetSpecificUser()
-                { 
 
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            User user = new User();
-                            user.Id = reader.GetInt32(0);
-                            user.FirstName = reader.GetString(1);
-                            user.LastName = reader.GetString(2);
+                List<UserRestModel> finalUsers = new List<UserRestModel>();
 
-                            users.Add(user);
-                        }
-                        User specificUser = users.Where(x => x.Id == userId).Select(x => x).FirstOrDefault();
-                        return specificUser;
-                    }   
-                    else
-                    {
-                        return null;
-                    }
-                }
-                User userWithId = GetSpecificUser();
-                if (userWithId != null)
+                foreach (User user in users)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, userWithId);
+                    UserRestModel userRest = new UserRestModel();
+                    userRest.FirstName = user.FirstName;
+                    userRest.LastName = user.LastName;
+                    finalUsers.Add(userRest);
                 }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound, "No such user");
-                }
+                return Request.CreateResponse(HttpStatusCode.OK, finalUsers);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "No users");
+            }
+
+        }
+        [HttpPost]
+        [Route("api/CreateUser")]
+        public async Task<HttpResponseMessage> CreateUserAsync(User user)
+        {
+            UserServices userServices = new UserServices();
+            await userServices.CreateUserAsync(user);
+
+            if (user != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, user);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
+            }
+
+
+        }
+
+        [HttpPut]
+        [Route("api/UpdateUser")]
+        public async Task<HttpResponseMessage> UpdateUserByIdAsync(User user)
+        {
+            UserServices userServices = new UserServices();
+            await userServices.UpdateUserByIdAsync(user);
+
+            if (user != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, user);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
             }
         }
-        */
+        [HttpDelete]
+        [Route("api/DeleteUser/{id}")]
+        public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id)
+        {
+            UserServices userServices = new UserServices();
+            await userServices.DeleteUserByIdAsync(id);
+            User user = new User();
+            if (user == null && user.Id == id)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
+            }
+        }
     }
-    public class UserRest
-    {
-        public string FirstName { get; set; }
-    }
-    
 }

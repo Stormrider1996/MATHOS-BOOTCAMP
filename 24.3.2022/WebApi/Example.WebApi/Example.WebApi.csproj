@@ -255,6 +255,10 @@
       <Project>{703B477B-F150-47B0-8ED3-E82C561F46A3}</Project>
       <Name>Example.UserModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RestModel\Example.RestModel.csproj">
+      <Project>{B9F4D34B-87C5-4415-9A7A-ED95F506F05D}</Project>
+      <Name>Example.RestModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -174,3 +174,5 @@ C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\E
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\Example.Services.pdb
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\Example.UserModel.pdb
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\Example.Repository.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\RestModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.WebApi\bin\RestModel.pdb

@@ -1,0 +1,6 @@
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\bin\Debug\RestModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\bin\Debug\RestModel.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\obj\Debug\Example.RestModel.csproj.AssemblyReference.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\obj\Debug\Example.RestModel.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\obj\Debug\RestModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\RestModel\obj\Debug\RestModel.pdb
