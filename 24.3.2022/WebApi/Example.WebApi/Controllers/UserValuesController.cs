@@ -119,19 +119,25 @@ namespace Example.WebApi.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
             }
         }
+        //Metoda radi, logika provjeravanja je losa (prvi if ce uvijek biti false)!
         [HttpDelete]
         [Route("api/DeleteUser/{id}")]
         public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id)
         {
             UserServices userServices = new UserServices();
+            User user = new User();
             await userServices.DeleteUserByIdAsync(id);
             if (!await userServices.DeleteUserByIdAsync(id))
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
             }
-            else
+            else if (user == null || user.Id != id)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Error");
             }
         }
     }

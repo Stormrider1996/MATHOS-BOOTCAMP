@@ -1,0 +1,30 @@
+﻿<div style="margin-top:35px">
+    <p style="font-weight:bold;text-decoration:underline">
+        These are the values that were injected into the home controller
+    </p>
+    <p>
+        Transient value of Guid: @ViewBag.transientID
+    </p>
+    <p>
+        Scoped value of Guid: @ViewBag.scopedID
+    </p>
+    <p>
+        Singleton value of Guid: @ViewBag.singletonID
+    </p>
+</div>
+
+<div>
+    <p style="font-weight:bold;text-decoration:underline">
+
+        These are the values that were injected into Someservice Implementation
+    </p>
+    <p>
+        Transient value of Guid: @ViewBag.someServiceProvider.TransientUniquekeyProvider.UniqueKey
+    </p>
+    <p>
+        Scoped value of Guid: @ViewBag.someServiceProvider.ScopedUniquekeyProvider.UniqueKey
+    </p>
+    <p>
+        Singleton value of Guid: @ViewBag.someServiceProvider.SingletonUniquekeyProvider.UniqueKey
+    </p>
+</div> 
