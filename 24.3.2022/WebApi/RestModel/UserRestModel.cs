@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Example.RestModel
 {
-    public class UserRestModel
+    public class UserRestModel : IUserRestModel
     {
         public string FirstName { get; set; }
 

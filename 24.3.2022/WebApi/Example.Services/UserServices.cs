@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace Example.Services
 {
-    public class UserServices
+    public class UserServices : IUserServices
     {
-        public async Task<List<User>> GetUsersAsync()
+        protected IUserRepository Services { get; set; }
+        public UserServices(IUserRepository services)
         {
-            UserRepository userRepository = new UserRepository();
-            return await userRepository.GetUsersAsync();
+            Services = services;
         }
-        public async Task<List<User>> GetUsersByIdAsync(int id)
+        public async Task<List<IUser>> GetUsersAsync()
         {
-            UserRepository userRepository = new UserRepository();
-            return await userRepository.GetUsersByIdAsync(id); ;
+            return await Services.GetUsersAsync();
         }
-        public async Task CreateUserAsync(User user)
+        public async Task<List<IUser>> GetUsersByIdAsync(int id)
         {
-            UserRepository userRepository = new UserRepository();
-            await userRepository.CreateUserAsync(user);
+            return await Services.GetUsersByIdAsync(id);
         }
-        public async Task UpdateUserByIdAsync(User user)
+        public async Task CreateUserAsync(IUser OneUser)
         {
-            UserRepository userRepository = new UserRepository();
-            await userRepository.UpdateUserByIdAsync(user);
+            await Services.CreateUserAsync(OneUser);
         }
-        public async Task<Boolean> DeleteUserByIdAsync(int id)
+        public async Task UpdateUserByIdAsync(IUser Id)
         {
-            UserRepository userRepository = new UserRepository();
-            return await userRepository.DeleteUserByIdAsync(id);
+            await Services.UpdateUserByIdAsync(Id);
+        }
+        public async Task<bool> DeleteUserByIdAsync(int id)
+        {
+            return await DeleteUserByIdAsync(id);
         }
     }
 }

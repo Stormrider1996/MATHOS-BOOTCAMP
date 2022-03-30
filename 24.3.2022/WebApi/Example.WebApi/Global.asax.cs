@@ -1,6 +1,13 @@
-﻿using System;
+﻿using Autofac;
+using Autofac.Integration.WebApi;
+using Example.Repository;
+using Example.RestModel;
+using Example.Services;
+using Example.UserModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -18,6 +25,19 @@ namespace Example.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var builder = new ContainerBuilder();
+            var config = GlobalConfiguration.Configuration;
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterType<User>().As<IUser>();
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<UserServices>().As<IUserServices>();
+            var container = builder.Build();
+
+            
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+        
+            
         }
     }
 }

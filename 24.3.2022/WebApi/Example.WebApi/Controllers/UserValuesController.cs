@@ -14,13 +14,17 @@ namespace Example.WebApi.Controllers
 {
     public class UserValuesController : ApiController
     {
-
+        protected IUserServices Services { get; set; }
+        public UserValuesController(IUserServices services)
+        {
+            Services = services;
+        }
+        
         [HttpGet]
         [Route("api/GetUsers")]
-        public async Task<HttpResponseMessage> GetUsersAsync()
+        public async Task<HttpResponseMessage> ResponseGetUsersAsync()
         {
-            UserServices userServices = new UserServices();
-            List<User> users = await userServices.GetUsersAsync();
+            var users = await Services.GetUsersAsync();
 
             if (users != null)
             {
@@ -46,11 +50,10 @@ namespace Example.WebApi.Controllers
 
         [HttpGet]
         [Route("api/GetUsers/{id}")]
-        public async Task<HttpResponseMessage> GetUsersByIdAsync(int id)
+        public async Task<HttpResponseMessage> ResponseGetUsersByIdAsync(int id)
         {
-            UserServices userServices = new UserServices();
-            List<User> users = await userServices.GetUsersByIdAsync(id);
 
+            var users = await Services.GetUsersByIdAsync(id);
             if (users != null)
             {
 
@@ -73,17 +76,10 @@ namespace Example.WebApi.Controllers
         }
         [HttpPost]
         [Route("api/CreateUser")]
-        public async Task<HttpResponseMessage> CreateUserAsync(User user)
+        public async Task<HttpResponseMessage> CreateUserAsync(IUser user)
         {
-            UserServices userServices = new UserServices();
-            User userModel = new User
-            {
-                Id = user.Id,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-            };
-            await userServices.CreateUserAsync(userModel);
-            
+
+            await Services.CreateUserAsync(user);
             
             if (user != null)
             {
@@ -99,16 +95,10 @@ namespace Example.WebApi.Controllers
 
         [HttpPut]
         [Route("api/UpdateUser")]
-        public async Task<HttpResponseMessage> UpdateUserByIdAsync(User user)
+        public async Task<HttpResponseMessage> UpdateUserByIdAsync(IUser user)
         {
-            UserServices userServices = new UserServices();
-            User userModel = new User
-            {
-                Id = user.Id,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-            };
-            await userServices.UpdateUserByIdAsync(userModel);
+
+            await Services.UpdateUserByIdAsync(user);
 
             if (user != null)
             {
@@ -122,12 +112,9 @@ namespace Example.WebApi.Controllers
         //Metoda radi, logika provjeravanja je losa (prvi if ce uvijek biti false)!
         [HttpDelete]
         [Route("api/DeleteUser/{id}")]
-        public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id)
+        public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id, IUser user)
         {
-            UserServices userServices = new UserServices();
-            User user = new User();
-            await userServices.DeleteUserByIdAsync(id);
-            if (!await userServices.DeleteUserByIdAsync(id))
+            if (!await Services.DeleteUserByIdAsync(id))
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
             }
