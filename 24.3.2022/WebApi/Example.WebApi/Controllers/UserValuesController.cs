@@ -114,7 +114,7 @@ namespace Example.WebApi.Controllers
         [Route("api/DeleteUser/{id}")]
         public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id)
         {
-            if (await Services.DeleteUserByIdAsync(id) == true)
+            if (await Services.DeleteUserByIdAsync(id) == false)
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
             }

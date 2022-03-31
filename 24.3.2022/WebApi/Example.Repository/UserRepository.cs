@@ -117,15 +117,9 @@ namespace Example.Repository
                 await adapter.DeleteCommand.ExecuteNonQueryAsync();
 
                 connection.Close();
+
+                bool value = await DeleteUserByIdAsync(id);
                 
-                if(!await DeleteUserByIdAsync(id))
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
             }
         }
     }
