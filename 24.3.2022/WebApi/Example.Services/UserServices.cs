@@ -1,4 +1,5 @@
 ﻿using Example.Repository;
+using Example.RestModel;
 using Example.UserModel;
 using System;
 using System.Collections.Generic;
@@ -15,25 +16,25 @@ namespace Example.Services
         {
             Services = services;
         }
-        public async Task<List<IUser>> GetUsersAsync()
+        public async Task<List<User>> GetUsersAsync()
         {
             return await Services.GetUsersAsync();
         }
-        public async Task<List<IUser>> GetUsersByIdAsync(int id)
+        public async Task<List<User>> GetUsersByIdAsync(int id)
         {
             return await Services.GetUsersByIdAsync(id);
         }
-        public async Task CreateUserAsync(IUser OneUser)
+        public async Task CreateUserAsync(User user)
         {
-            await Services.CreateUserAsync(OneUser);
+            await Services.CreateUserAsync(user);
         }
-        public async Task UpdateUserByIdAsync(IUser Id)
+        public async Task UpdateUserByIdAsync(User user)
         {
-            await Services.UpdateUserByIdAsync(Id);
+            await Services.UpdateUserByIdAsync(user);
         }
         public async Task<bool> DeleteUserByIdAsync(int id)
         {
-            return await DeleteUserByIdAsync(id);
+            return await Services.DeleteUserByIdAsync(id);
         }
     }
 }

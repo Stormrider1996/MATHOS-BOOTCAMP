@@ -31,7 +31,7 @@ namespace Example.WebApi.Controllers
 
                 List<UserRestModel> finalUsers = new List<UserRestModel>();
 
-                foreach (User user in users)
+                foreach (var user in users)
                 {
                     UserRestModel userRest = new UserRestModel();
                     userRest.FirstName = user.FirstName;
@@ -76,7 +76,7 @@ namespace Example.WebApi.Controllers
         }
         [HttpPost]
         [Route("api/CreateUser")]
-        public async Task<HttpResponseMessage> CreateUserAsync(IUser user)
+        public async Task<HttpResponseMessage> CreateUserAsync(User user)
         {
 
             await Services.CreateUserAsync(user);
@@ -95,7 +95,7 @@ namespace Example.WebApi.Controllers
 
         [HttpPut]
         [Route("api/UpdateUser")]
-        public async Task<HttpResponseMessage> UpdateUserByIdAsync(IUser user)
+        public async Task<HttpResponseMessage> UpdateUserByIdAsync(User user)
         {
 
             await Services.UpdateUserByIdAsync(user);
@@ -112,20 +112,16 @@ namespace Example.WebApi.Controllers
         //Metoda radi, logika provjeravanja je losa (prvi if ce uvijek biti false)!
         [HttpDelete]
         [Route("api/DeleteUser/{id}")]
-        public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id, IUser user)
+        public async Task<HttpResponseMessage> DeleteUserByIdAsync(int id)
         {
-            if (!await Services.DeleteUserByIdAsync(id))
+            if (await Services.DeleteUserByIdAsync(id) == true)
             {
                 return Request.CreateResponse(HttpStatusCode.OK, "User has been deleted");
             }
-            else if (user == null || user.Id != id)
+            else
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Error");
             }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Error");
-            }
-        }
+        }  
     }
 }

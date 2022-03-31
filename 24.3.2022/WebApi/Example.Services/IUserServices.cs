@@ -1,4 +1,5 @@
-﻿using Example.UserModel;
+﻿using Example.RestModel;
+using Example.UserModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +7,10 @@ namespace Example.Services
 {
     public interface IUserServices
     {
-        Task CreateUserAsync(IUser OneUser);
+        Task CreateUserAsync(User user);
         Task<bool> DeleteUserByIdAsync(int id);
-        Task<List<IUser>> GetUsersAsync();
-        Task<List<IUser>> GetUsersByIdAsync(int id);
-        Task UpdateUserByIdAsync(IUser Id);
+        Task<List<User>> GetUsersAsync();
+        Task<List<User>> GetUsersByIdAsync(int id);
+        Task UpdateUserByIdAsync(User user);
     }
 }

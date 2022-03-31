@@ -29,3 +29,6 @@ C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\RestModel.dll
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\RestModel.pdb
+C:\Users\student\Documents\MATHOS-BOOTCAMP\24.3.2022\WebApi\Example.Services\bin\Debug\RestModel.dll.config

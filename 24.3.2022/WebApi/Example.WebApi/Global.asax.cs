@@ -29,7 +29,7 @@ namespace Example.WebApi
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            builder.RegisterType<User>().As<IUser>();
+            
             builder.RegisterType<UserRepository>().As<IUserRepository>();
             builder.RegisterType<UserServices>().As<IUserServices>();
             var container = builder.Build();
