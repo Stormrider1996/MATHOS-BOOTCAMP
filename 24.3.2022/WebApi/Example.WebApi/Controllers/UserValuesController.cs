@@ -53,7 +53,7 @@ namespace Example.WebApi.Controllers
         public async Task<HttpResponseMessage> ResponseGetUsersByIdAsync(int id)
         {
 
-            var users = await Services.GetUsersByIdAsync(id);
+            List<User> users = await Services.GetUsersByIdAsync(id);
             if (users != null)
             {
 

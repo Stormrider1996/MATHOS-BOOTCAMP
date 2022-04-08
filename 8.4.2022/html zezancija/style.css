@@ -1,0 +1,19 @@
+#styleOne
+{
+background-color:lightblue;
+color:white;
+padding:400px;
+text-align:center;
+}
+.classStyle
+{
+background-color:tomato;
+color: white;
+padding:10px;
+}
+
+table,t1,tr
+{
+border:1px solid tomato;
+border-collapse:collapse;
+}
