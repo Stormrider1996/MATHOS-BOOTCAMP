@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="test.css" rel="stylesheet"/>
     <title>Receptionist login</title>
@@ -10,16 +10,17 @@
 <style>
     div {text-align: center;}
 </style>
+<script src="login.js"></script>
 <body>
     <div>
+        <form id="form_id" method="post" name="myform">
         <h1 id="styleOne">Receptionist login</h1>
         <label>Username</label>
-        <input type="text"><br><br>
+        <input type="text" name="username" id="username"><br><br>
         <label>Password</label>
-        <input type="password"><br><br>
-        <a href="test2.html">
-        <button>Login</button>
-        </a>
+        <input type="password" name="password" id="password"><br><br>
+        <input type="button" value="Login" id="submit" onclick="validate()">
+    </form>
     </div>
 </body>
 </html>
