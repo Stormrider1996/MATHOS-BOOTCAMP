@@ -6,14 +6,14 @@ function validate()
     var password = document.getElementById("password").value;
     if (username == "123" && password == "123")
     {
-        alert ("Login successfully");
+        alert ("Login successfull");
         window.location = "test4.html";
         return false;
     }
     else
     {
         attempt --;
-        alert("Wrong username or password\nYou have "+attempt+" attempts left");
+        alert("Wrong username or password\nYou have "+attempt+" attempt/s left");
         if (attempt == 0)
         {
             window.location = "test2.html";
