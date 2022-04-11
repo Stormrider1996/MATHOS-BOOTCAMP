@@ -1,20 +1,43 @@
-function listTest ()
+var list = [];
+
+function postList ()
 {
-    let list = 
-    [
-        { date: '04/04/1944', reading: 3, id: 20055 },
-        { date: '05/05/1955', reading: 5, id: 20053 },
-        { date: '06/06/1966', reading: 6, id: 45652 }
-    ];
+    var id = document.getElementById("id").value;
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    let user = { id, firstname, lastname };
+    list.push(user);
+    clearInputs();
+    if (list.length > 2)
+    {
+        localStorage.setItem("userList", JSON.stringify(list))
+        window.location = "test4.html";
+        
+    }
+    else
+    {
+        
+        alert("Added "+list.length+" user/s");
+        
+    }
+}  
     
-    let index = document.getElementById("number").value
-    
-    let result = list.map(a => a.date);
-    alert(result[index]);
-    
-    //alert(Object.values(list[index]))
 
 
+function getList ()
+{
+    let listStr = localStorage.getItem("userList");
+    list = JSON.parse(listStr);
+    let flag = document.getElementById("number").value;
+    let user = list[flag];
+    alert(`${user.id} ${user.firstname} ${user.lastname}`);
+    // let result = list.map(a => a.date);
+    // alert(result[index]);
 }
 
-
+function clearInputs()
+{
+    document.getElementById("id").value = "";
+    document.getElementById("firstname").value = "";
+    document.getElementById("lastname").value = "";
+}
