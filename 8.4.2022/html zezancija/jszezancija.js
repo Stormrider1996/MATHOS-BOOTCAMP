@@ -2,9 +2,9 @@ var list = [];
 
 function postList ()
 {
-    var id = document.getElementById("id").value;
-    var firstname = document.getElementById("firstname").value;
-    var lastname = document.getElementById("lastname").value;
+    let id = document.getElementById("id").value;
+    let firstname = document.getElementById("firstname").value;
+    let lastname = document.getElementById("lastname").value;
     let user = { id, firstname, lastname };
     list.push(user);
     clearInputs();
@@ -31,8 +31,7 @@ function getList ()
     let flag = document.getElementById("number").value;
     let user = list[flag];
     alert(`${user.id} ${user.firstname} ${user.lastname}`);
-    // let result = list.map(a => a.date);
-    // alert(result[index]);
+    
 }
 
 function clearInputs()

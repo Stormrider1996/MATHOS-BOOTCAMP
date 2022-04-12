@@ -2,8 +2,8 @@ var attempt = 3;
 function validate()
 {
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
     if (username == "123" && password == "123")
     {
         alert ("Login successfull");
