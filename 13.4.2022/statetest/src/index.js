@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./style.css"
 
-// Primjer state-ova u funkcijskoj komponenti
+/////////////////////////// Primjer state-ova u funkcijskoj komponenti
 
 // // function App() {
 // //     /*const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
@@ -25,7 +25,7 @@ import "./style.css"
 // }
 // ReactDOM.render(<App />, document.getElementById("root"));
 
-// Primjer state-ova u class komponenti
+/////////////////////////// Primjer state-ova u class komponenti
 
 class Thing extends React.Component {
   constructor(props) {
